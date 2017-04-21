@@ -91,18 +91,24 @@
                 </div>
 
           <!--        <div class="row">
-                    <div class="input-field col s12 ">
+                   
                          <a class="modal-trigger" href="#modal3">
                             <input  required id="chkbxAceptaTerminos"   type="checkbox" class="filled-in "    />
                             <label for="chkbxAceptaTerminos">Términos de postulación. <span style="color:red" id="msgTerminos"></span> </label>
                         </a>
                         </div>
                  </div> -->
+                  <div class="row">
+                   <div class="input-field col s12 ">
+                     <label for="postular">  <span style="color:red" id="msgValidation"></span>  </label>
+                      </div>
+                  </div>
 
                 <div class="row">
                   <div class="input-field col s12 center">
-                    <input required class="waves-effect waves-light btn mar-big" id="postular" type="submit"></input>
-                  </div>
+                          <input required class="waves-effect waves-light btn mar-big" id="postular" type="submit"></input>
+                          
+                           
                 </div>
 
               </form>
@@ -175,7 +181,7 @@ $('#declinaTerminos').click(function(){
     
 });
 
-         $('.modal').modal();
+ $('.modal').modal();
 $('.parallax').parallax();
 $('#experience').keyup(function () {
   var max = 1500;
@@ -198,24 +204,36 @@ $('#motivations').keyup(function () {
     $('#motivations_count').text(' quedan '+char + ' caracteres');
   }
 });
-
+$('#textarea1').trigger('autoresize');
  $('#motivations').val('');
   $('#experience').val('');
 
 
+// $('#postular').click(function(){
+// if ( !$('#chkbxAceptaTerminos').is(':checked')) {
+//        //console.log('falta los terminos');
+//        $( "#msgTerminos " ).html( "No puede postular sin aceptar los términos previamente." ).show().fadeOut( 10000 );
+//        return;
+// }
+// });
+var msgVal='';
 $('#postular').click(function(){
-if ( !$('#chkbxAceptaTerminos').is(':checked')) {
-       //console.log('falta los terminos');
-       $( "#msgTerminos" ).html( "No puede postular sin aceptar los términos previamente." ).show().fadeOut( 10000 );
-       return;
-}
+  msgVal='';
+       ($('#email').val()=='') ? msgVal+=' Correo,':'';   //
+        ($('#rut').val()=='') ? msgVal+=' Rut,':'';
+        ($('#first_name').val()=='') ? msgVal+=' Nombre,':'';
+        ($('#last_name').val()=='') ? msgVal+=' Apellido,':'';
+        ($('#project_name').val()=='') ? msgVal+=' Proyecto,':'';
+        console.log( "Falta "+ msgVal+" por ingresar!" );
+       (msgVal!='')?$( "#msgValidation" ).text( "Falta "+ msgVal+" por ingresar!" ).show().fadeOut( 10000 ):'';
+          
 });
 
 
 var request;
 $( 'form' ).submit(function( event ) {
-
-
+   
+    if (msgVal==''){
     event.preventDefault();
     if (request) {
         request.abort();
@@ -228,13 +246,11 @@ $( 'form' ).submit(function( event ) {
          request = $.ajax({
               url: "endpoints/postular.php",
               type: "post",
-              data: serializedData,
-              
+              data: serializedData,  
             });
             request.done(function( msg ) {
-
              alert( msg );
-             location.reload();
+          //   location.reload();
             });      
             request.fail(function( jqXHR, textStatus, errorThrown ) {
               alert( "Request failed: " + textStatus + errorThrown );
@@ -242,13 +258,15 @@ $( 'form' ).submit(function( event ) {
              request.always(function () {
                 $inputs.prop("disabled", false);
             });
- 
-         
-  
- 
+
+      }else{
+        $( "#msgValidation" ).text( "Falta "+ msgVal+" por ingresar!" ).show().fadeOut( 10000 );
+      }
+
+
     });
  
-  $('#textarea1').trigger('autoresize');
+  
 });
 
 </script>

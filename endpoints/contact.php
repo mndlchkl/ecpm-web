@@ -16,27 +16,25 @@ $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 $headers .= 'From:' . $correo. "\r\n"; // Sender's Email
 $headers .= 'Cc:' . $correo2. "\r\n"; // Carbon copy to Sender
  
- 
 if( !mail($destino,$asunto,$cuerpo.'...  ATTE:'.$nombre,$headers) ){
 		echo "No se pudo enviar intente contactarse al correo ".$destino.' .';
 }else{
-	echo "Su consulta fue recibida, recibirá una respuesta al correo prontamente. Gracias.";
+	echo "Su consulta fue ingresada, recibirá una respuesta al correo prontamente. Gracias.";
 		
 }
 
-$servername = "localhost";
-$username = "root";
-$password = "godzuki";
-$dbname = "ecpm";
+include('conn.php');
+
+$stmt = $mysqli->prepare("INSERT into contact(name, mail, header, description) VALUES (?, ?, ?,?)");
+		
+$stmt->bind_param("ssss", $nombre,$correo,$asunto,$cuerpo);
+$stmt->execute();
+/*if (! ($stmt->error == '') ) {
+ 	echo "Error: ". $stmt->error;
+}else{
+ */
+$stmt->close();
+$mysqli->close();
  
-$mysqli = new mysqli($servername,$username,$password,$dbname);
-mysqli_set_charset($mysqli,"utf8");
-
-$query=("insert into contact(name, mail, header, description) 
-				values('".$nombre."', '".$correo."', '".$asunto."','".$cuerpo .'...  ATTE:'.$nombre."') ");    
-
-	 $result = $mysqli->query($query);
-  		 // echo   "Postulación recibida. pronto tendrás noticias sobre los resultados"; 
-  
     
 ?>
