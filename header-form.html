@@ -1,0 +1,25 @@
+
+ <div  id="pre-form-header" class="parallax-container">
+    <div class="parallax"><img src="images/postu.jpg"></div>
+    <h2 class="header" style="color:black; text-align: center;padding-top: 5%">Formulario de postulación</h2>
+      
+  <h5 class="header" style="margin-right:10%;margin-left:10%;color:black; text-align: justify;padding-top: 10%">
+      Completa todos los campos solicitados y lee bien las bases antes de postular</h5>
+ <button id="verbases" class="btn waves-effect waves-light green right " style="margin-right: 10%" type="submit">Revisa las bases<i class="material-icons right"  ">new_releases</i></button>
+
+    
+</div> 
+
+
+<script>
+$(document).ready(function(){
+ 
+          $('#verbases').click(function(event){
+          
+                //$('.button-collapse').sideNav('hide');
+             $('#contenido').load("bases.html");
+             window.scrollTo(0, 0);
+        });
+ 
+});
+ </script>

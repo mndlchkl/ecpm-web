@@ -1,0 +1,279 @@
+<div class="parallax-container2 valign-wrapper" style="padding-top: 30px;">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <div class="row">
+
+        <ul class="collection">
+          <li class="collection-item"><h4>Formulario de postulación</h4></li>
+          <li class="collection-item">
+
+            <div class="row" style="margin:10px;">
+              
+              <h5 class="header black-text" style="margin-bottom:30px;"><i class="small material-icons prefix">contacts</i>&nbsp Datos de contacto</h5>
+
+              <form action="/" id="postForm">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input required class="validate" name="first_name" id="first_name" type="text">
+                      <label for="first_name">Nombre</label>
+                    </input>
+                  </div>
+                  <div class="input-field col s6">
+                    <input required class="validate" id="last_name" name="last_name" type="text">
+                      <label for="last_name">Apellido</label>
+                    </input>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input required class="validate" id="email" name="email" type="email">
+                      <label data-error="mal ahi" data-success="" for="email">Correo</label>
+                    </input>
+                  </div>
+                  <div class="input-field col s6">
+                    <input required class="validate" id="phone" name="phone" type="number">
+                      <label for="phone">Teléfono</label>
+                    </input>
+                  </div>
+                </div>
+                  
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input oninput="checkRut(this) " required class="validate" id="rut" name="rut" type="text"  >
+                      <label for="rut">Rut (sin puntos ni guión)</label>
+                    </input>
+                  </div>  
+                </div>
+                
+                <h5 class="header black-text" style="margin-bottom:30px;"><i class="small material-icons prefix">mode_edit</i>&nbsp Cuentanos acerca de</h5>
+                
+                <div class="row">
+                  <div class="input-field col s12 ">
+                    <input required class="validate" id="project_name" name="project_name" type="text">
+                      <label for="project_name">Nombre del proyecto musical</label>
+                    </input>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="input-field col s12 ">
+                    <label for="experience">Experiencia (1500 caracteres max). <span id="experience_count"></span></label>
+                    <textarea required form="postForm" class="materialize-textarea" id="experience" name="experience"></textarea>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12 ">
+                    <label for="motivations">Motivaciones de participar (1500 caracteres max). <span id="motivations_count"></span></label>
+                    <textarea required  form="postForm" class="materialize-textarea" data-length="14" id="motivations" name="motivations"></textarea>
+                  </div>
+                </div>
+                
+                <h5 class="header black-text" style="margin-bottom:30px;"><i class=" small material-icons prefix">input</i>&nbsp Para que conozcamos más tu trabajo</h5>
+
+                <div class="row">
+                  <div class="input-field col s4 ">
+                    <input required name="music_link" class="validate" id="music_link" type="text" >
+                      <label for="music_link">Comparte un link</label>
+                    </input>
+                  </div>
+                  <div class="input-field col s4 ">
+                    <input name="music_link2" class="validate" id="music_link2" type="text" >
+                      <label for="music_link2">Comparte otro link</label>
+                    </input>
+                  </div>
+                  <div class="input-field col s4 ">
+                    <input name="music_link3" class="validate" id="music_link3" type="text" >
+                      <label for="music_link3">Comparte otro link</label>
+                    </input>
+                  </div>
+                </div>
+
+          <!--        <div class="row">
+                    <div class="input-field col s12 ">
+                         <a class="modal-trigger" href="#modal3">
+                            <input  required id="chkbxAceptaTerminos"   type="checkbox" class="filled-in "    />
+                            <label for="chkbxAceptaTerminos">Términos de postulación. <span style="color:red" id="msgTerminos"></span> </label>
+                        </a>
+                        </div>
+                 </div> -->
+
+                <div class="row">
+                  <div class="input-field col s12 center">
+                    <input required class="waves-effect waves-light btn mar-big" id="postular" type="submit"></input>
+                  </div>
+                </div>
+
+              </form>
+            
+            </div>
+          
+          </li>
+         <li class="collection-item">
+            <p>¡ATENCIÓN! - Antes de enviar su postulación, asegurese de haber completado cada uno de los campos del  formulario con información fidedigna.</p>
+          </li>  
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+  <div class="parallax"><img src="images/bases.jpg" alt="Unsplashed background img 2"></div>
+</div>
+
+
+
+
+ <!-- Modal Structure -->
+        <div class="modal" id="modal3">
+            <div class="modal-content">
+                <h4>
+                    Términos
+                </h4>
+                <br>
+               <p> es un espacio formativo para artistas musicales de la X Región, en el que se propone expandir la formación más allá de la ejecución musical, integrando herramientas relacionadas con tecnología, marketing, puesta en escena y liderazgo. Con estas actividades el proyecto busca que los estudiantes se permitan potenciar y ampliar sus habilidades y así estar preparados para desafíos mayores. Al tratarse de un proyecto colaborativo fue necesaria la opinión y participación de actores relevantes en la escena musical local, artistas emergentes y la comunidad puertomontina fueron reunidos en tres Focus Group , además se pudo aplicar una encuesta a 370 personas y se rescataron opiniones de festivales y eventos masivos donde asistieron principalmente jóvenes. Todas estas tareas arrojaron resultados que fueron de suma importancia para llegar a la propuesta final, la cual define el desarrollo del proyecto en un periodo de 10 meses, en los cuales se contempla la realización de: Taller de Producción Musical, Taller de Composición Musical, Master Class, y una Formación Técnica Extendida, todas éstas desarrollados por expertos en sus materias. Para la finalización en su primer ciclo, este tiene por objetivo la producción de un video clip en e</p>
+               
+               
+            </div>
+            <div class="modal-footer">
+                <a id="declinaTerminos"  class="modal-action modal-close waves-effect waves-red btn-flat black-text" href="#!">
+                    Declinar
+                </a>
+                <a id="aceptaTerminos" class="modal-action modal-close waves-effect waves-green btn-flat black-text" href="#!">
+                    Aceptar
+                </a>
+            </div>
+        </div>
+
+<!--  <div class="col s12">
+                    This is an inline input field:
+                    <div class="input-field inline">
+                        <input class="validate" id="email" type="email">
+                            <label data-error="wrong" data-success="right" for="email">
+                                Email
+                            </label>
+                        </input>
+                    </div>
+                </div> -->
+<!-- <div class="parallax">
+        <img alt="Unsplashed background img 2" src="images/3dsoulwave.gif"/>
+    </div> -->
+<script>
+$(document).ready(function(){
+ 
+   
+ 
+
+$('#chkbxAceptaTerminos').prop('checked', false);
+$('#aceptaTerminos').click(function(){
+       $('#chkbxAceptaTerminos').prop('checked', true);
+
+});
+$('#declinaTerminos').click(function(){
+       $('#chkbxAceptaTerminos').prop('checked', false);
+    
+});
+
+         $('.modal').modal();
+$('.parallax').parallax();
+$('#experience').keyup(function () {
+  var max = 1500;
+  var len = $(this).val().length;
+  if (len >= max) {
+    $('#experience_count').text(' alcanzaste el máximo de caracteres');
+  } else {
+    var char = max - len;
+    $('#experience_count').text(' quedan '+char + ' caracteres');
+  }
+});
+
+$('#motivations').keyup(function () {
+  var max = 1500;
+  var len = $(this).val().length;
+  if (len >= max) {
+    $('#motivations_count').text(' alcanzaste el máximo de caracteres');
+  } else {
+    var char = max - len;
+    $('#motivations_count').text(' quedan '+char + ' caracteres');
+  }
+});
+
+ $('#motivations').val('');
+  $('#experience').val('');
+
+
+$('#postular').click(function(){
+if ( !$('#chkbxAceptaTerminos').is(':checked')) {
+       //console.log('falta los terminos');
+       $( "#msgTerminos" ).html( "No puede postular sin aceptar los términos previamente." ).show().fadeOut( 10000 );
+       return;
+}
+});
+
+
+var request;
+$( 'form' ).submit(function( event ) {
+
+
+    event.preventDefault();
+    if (request) {
+        request.abort();
+    }
+    var $form = $(this);
+    var $inputs = $form.find("input, select, button, textarea");
+    var serializedData = $form.serialize();
+    $inputs.prop("disabled", true);
+    //$( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
+         request = $.ajax({
+              url: "endpoints/postular.php",
+              type: "post",
+              data: serializedData,
+              
+            });
+            request.done(function( msg ) {
+
+             alert( msg );
+             location.reload();
+            });      
+            request.fail(function( jqXHR, textStatus, errorThrown ) {
+              alert( "Request failed: " + textStatus + errorThrown );
+            });
+             request.always(function () {
+                $inputs.prop("disabled", false);
+            });
+ 
+         
+  
+ 
+    });
+ 
+  $('#textarea1').trigger('autoresize');
+});
+
+</script>
+
+<style type="text/css">
+  .parallax-container2 {
+    position: relative;
+    overflow: hidden;
+  }
+</style>
+
+<!--  
+
+<style type="text/css">
+    .parallax-container {
+  height: 1000px;
+}
+.mar-small {
+  margin-top: 20px;
+}
+
+.header{
+
+font-family: 'Montserrat', sans-serif;
+ 
+}
+</style>
+-->

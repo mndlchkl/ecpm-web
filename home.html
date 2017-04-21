@@ -1,0 +1,124 @@
+ 
+<div class="parallax-container">
+    <div class="parallax"><img src="images/prx1.jpg"></div>
+ <div class="row">
+      <div class="input-field col s12 col l8">
+          <h2 class="header" style="  font-weight: bold;  color:white;text-align: center;padding-top: 10%; "> Escuela Colaborativa de Producción Musical Sur</h2>
+      </div>
+      <div id="cardpostular" class="col l4">
+           
+           <div class="card-panel push-right right center" style="margin:8%;" >
+              <p> Postula a la primera Escuela de Producción Musical Sur.</p>   
+                <button id="postular" class="btn waves-effect waves-light red" type="submit">Postula aqui
+                <i class="material-icons right">new_releases</i>
+                </button>
+          </div>
+
+      </div>
+      <div id="btnpostular" class="center col s12">
+           <button id="postular2" class="btn waves-effect waves-light red" type="submit">Postula aqui
+                <i class="material-icons right">new_releases</i>
+                </button>
+      </div>
+</div>
+</div>  
+ 
+<div class="container"  >
+  
+        <div class="row">
+            <div class="col s12" >
+                <p style="  font-weight: bold; font-size:120%" >"La música como motor de desarrollo social"
+                    ECPM SUR es un espacio inclusivo y colaborativo donde los jóvenes beneficiarios tendrán una 
+                    educación integral y de calidad en el ámbito musical, propiciando un cambio favorable en el desarrollo social y cultural de nuestra región y los músicos de la escena local.Este proyecto se puede realizar gracias al apoyo de Corfo y el Gobierno de Chile.</p>
+            </div>
+        
+    </div>
+</div>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="images/prx2.jpg"></div>
+    <h2 class="header" style=" font-weight: bold;color:white;text-align: center;padding-top: 20%">El proyecto</h2>
+</div>
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col s12">
+                <p style="  font-weight: bold; font-size:110%">ECPM SUR es un espacio formativo para artistas musicales de la X Región, en el que se propone expandir la formación más allá de la ejecución musical, integrando herramientas relacionadas con tecnología, marketing, puesta en escena y liderazgo. Con estas actividades el proyecto busca que los estudiantes se permitan potenciar y ampliar sus habilidades y así estar preparados para desafíos mayores. Al tratarse de un proyecto colaborativo fue necesaria la opinión y participación de actores relevantes en la escena musical local, artistas emergentes y la comunidad puertomontina fueron reunidos en tres Focus Group , además se pudo aplicar una encuesta a 370 personas y se rescataron opiniones de festivales y eventos masivos donde asistieron principalmente jóvenes. Todas estas tareas arrojaron resultados que fueron de suma importancia para llegar a la propuesta final, la cual define el desarrollo del proyecto en un periodo de 10 meses, en los cuales se contempla la realización de: Taller de Producción Musical, Taller de Composición Musical, Master Class, y una Formación Técnica Extendida, todas éstas desarrollados por expertos en sus materias. Para la finalización en su primer ciclo, este tiene por objetivo la producción de un video clip en estudio por banda más la producción de un single por proyecto musical.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="images/parallax3.jpg"></div>
+    <h2 class="header" style="  font-weight: bold; color:white;text-align: center;padding-top: 20%">Como puedes participar</h2>
+</div>
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col s12">
+                <p style="  font-weight: bold; font-size:110%">    
+               Se hace el llamado a todos los proyectos musicales (bandas, agrupaciones, dúos y solistas), de la región de Los Lagos, para participar en la primera convocatoria abierta de ECPM Sur.
+                La Escuela Colaborativa de Producción Musical Sur (ECPMSur) en conjunto con Balmaceda Arte Joven invitan a las agrupaciones musicales a formar parte de este proceso, en donde 10 propuestas musicales serán grabadas en el estudio musical ECPM Sur, y así formar un material audiovisual profesional.
+                Este material consiste en la grabación profesional con equipos de alta calidad de una canción por proyecto, más el registro de video filmado en el estudio de manera compilatoria.
+          <!--       ECPM Sur contiene los equipos de grabación mas profesionales y de calidad en el sur de Chile (la descripción de los equipos están al final de este documento).  -->
+                </p>
+                   <br> 
+                     <!--  <p   id="postulantes" style="cursor:pointer;text-align: right;padding-top: 7%;"> + Listado postulantes.</p> -->
+                
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style> 
+  .opacity   {
+  background: #fff;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  opacity: .6;
+  z-index: -10;
+ 
+}
+@media only screen and (max-width : 992px) {
+  #cardpostular {
+    display: none;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #btnpostular {
+    display:none;
+  }
+}
+</style>
+
+<script>
+    $(document).ready(function(){
+        $('.parallax').parallax();
+      //  $('#instagram').load("gallery.html");
+ 
+         $('#postular').click(function(event){
+          
+                //$('.button-collapse').sideNav('hide');
+             $('#contenido').load("bases.html");
+             window.scrollTo(0, 0);
+        });
+
+         $('#postular2').click(function(event){
+          
+                //$('.button-collapse').sideNav('hide');
+             $('#contenido').load("bases.html");
+             window.scrollTo(0, 0);
+        });
+
+          $('#postulantes').click(function(event){
+          
+                //$('.button-collapse').sideNav('hide');
+             $('#contenido').load("postulantes.html");
+             window.scrollTo(0, 0);
+        });
+ 
+
+    });
+</script>

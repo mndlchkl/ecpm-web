@@ -1,0 +1,78 @@
+p, h5,h2,a,li,h1,h3,h4,button
+{
+  font-family: 'Didact Gothic', sans-serif;
+  text-align: justify;
+}
+
+
+header, main, footer {
+  padding-left: 300px;
+  /*font-size: 0px !important*/
+}
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+    /*font-size: 0px !important*/
+  }
+  .separador {
+    display:none;
+  }
+}
+@media only screen and (min-width: 992px) {
+  nav {
+    display:none;
+  }
+}
+.pad {
+	padding-top: 100px;
+}
+.pad-menu {
+  padding-top: 70px;
+}
+.pad-small {
+	padding-top: 15px;
+}
+.pad-redes {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.mar {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.parallax-container {
+  height: 400px;
+}
+
+/* unvisited link */
+a:link {
+  color: white;
+}
+/* visited link */
+a:visited {
+  color: white;
+}
+/* mouse over link */
+a:hover {
+  color: #009688;
+}
+/* selected link */
+a:active {
+  color: #009688;
+} 
+.side-nav li>a {
+	font-size: 20px;
+}
+a {
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+footer {
+	padding-top: 0px !important
+}
+.side-nav li .menuefecto:hover {
+  background-color: white;
+  color: black !important;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}

@@ -1,0 +1,51 @@
+.marcero {
+  margin: 0px !important
+}
+.marco {
+  background: #000000;
+  margin: 0px;
+  overflow: visible;
+  position:relative;
+}
+.marco .mascara {
+  overflow: hidden;
+}
+.marco .mascara .gallery-box-caption {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  transition: all .35s;
+}
+.marco .mascara .gallery-box-caption .gallery-box-content {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translateY(-50%);
+}
+.marco .mascara:hover .gallery-box-caption {
+  opacity: 1;
+}
+.marco .mascara:hover img {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.marco .mascara img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+.padfotos {
+  padding: 10px !important
+}

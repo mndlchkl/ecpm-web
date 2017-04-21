@@ -1,0 +1,54 @@
+<div class="section no-pad-bot">
+    <br>
+        <br>
+            <h4 class="header center black-text">
+                Postulantes
+            </h4>
+            <ul class="collection" id="listado">
+
+
+               
+            </ul>
+        </br>
+    </br>
+</div>
+<script>
+    $(document).ready(function(){
+
+	   		  request = $.ajax({
+              url: "endpoints/postulantes.php",
+              type: "get",
+              
+              
+            });
+            request.done(function( data ) {
+               data=	 JSON.parse(data);
+               console.log(data);
+
+                for (var key in data) {
+                   // $('#listado').append('<li>' + (parseInt(key) + parseInt(1)) + ')  ' +data[key].name+' '+data[key].last_name+ ', '+ data[key].rut+  '</li>');
+
+
+                    $('#listado').append(' <li class="collection-item avatar">'+
+                   ' <a target="_blank" href="'+data[key].music_work_url+'">  <i class="material-icons circle green">play_arrow</i> </a>'+
+                    '<span class="title">"'+ data[key].project_name +' "</span>'+
+                    '<p> '+ (parseInt(key) + parseInt(1)) + ')  ' +data[key].name+' '+data[key].last_name+'  <br>'+
+                     data[key].email +   ' </p>'+
+               ' <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>'+
+             ' </li>     ');
+
+
+                }
+                   
+
+                 
+            });      
+            request.fail(function( jqXHR, textStatus, errorThrown ) {
+              alert( "Request failed: " + textStatus + errorThrown );
+            });
+             request.always(function () {
+               
+            });
+
+	   });
+</script>

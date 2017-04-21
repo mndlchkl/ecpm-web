@@ -1,0 +1,114 @@
+<div class="parallax-container1 valign-wrapper" style="padding-top: 30px;">
+  <div class="section no-pad-bot">
+    <div class="container">    
+      <div class="row">
+
+        <ul class="collection">
+          <li class="collection-item"><h4>BASES Y PROCESO DE INSCRIPCIÓN</h4></li>
+          <li class="collection-item avatar">
+            <i class="circle red">1</i>
+            <h5>Postulación</h5>
+            <p>Las y los interesados deben postular a través de un formulario ubicado al final de estas bases, completando todos los datos requeridos y adjuntando los links de sus proyectos en plataformas virtuales como: Youtube, SoundCloud, Spotify etc. Las postulaciones estarán abiertas desde el 20 de abril hasta el 12 de mayo del 2017.</p>
+          </li>
+          <li class="collection-item avatar">
+            <i class="circle red">2</i>
+            <h5>Requisitos Generales</h5>
+            <ul>
+              <li>- Tener entre 14 y 24 de edad.</li>
+              <li>- Tener conocimiento previo en la ejecución de algún instrumento.</li>
+              <li>- Tener un proyecto musical de hasta 8 personas.</li>
+              <li>- Tener disponibilidad para cursar un programa formativo que se extenderá desde mayo hasta el mes de noviembre del 2017.</li>
+            </ul>
+          </li>
+          <li class="collection-item avatar">
+            <i class="circle red">3</i>
+            <h5>Preselección y audiciones</h5>
+            <p>El objetivo de la primera preselección es apreciar las habilidades en el ámbito musical de cada proyecto y seleccionar los que cumplan distintas capacidades como: interés, sonido propio, composición, melodía, armonía e instrumentación.Se evaluará el material requerido en el formulario.</p>
+          </li>
+          <li class="collection-item avatar">
+            <i class="circle red">3.1</i>
+            <h5>Audición</h5>
+            <p>La segunda preselección contempla la presentación en vivo de los 15 proyectos seleccionados para este proceso, donde se evaluarán aspectos como: puesta en escena, dinámica grupal, composición e identidad musical.</p>
+          </li>
+          <li class="collection-item avatar">
+            <i class="circle red">3.2</i>
+            <h5>Sobre el jurado</h5>
+              <ul>
+                <li>- Ricardo Sarabia: Músico, arreglista y compositor.</li>
+                <li>- Elías Negrón: Músico, productor musical.</li>
+                <li>- Eduardo Navarro: Músico, fotógrafo y productor técnico de Balmaceda Arte Joven Los Lagos.</li>
+                <li>- Silvia Tapia: Músico y Licenciada en música y sonido de UNIACC.</li>
+                <li>- Daniel Oñate: Músico, interprete superior en flauta, profesor en Balmaceda arte joven, Ulagos.</li>
+              </ul>
+          </li>
+          <li class="collection-item avatar">
+            <i class="circle red">3.3</i>
+            <h5>Selección</h5>
+            <p>Se dan a conocer los 10 proyectos seleccionados en la web de ECPM Sur. Se agendarán entrevistas personales con los estudiantes seleccionados y se les hará entrega de carta de compromiso con detalles del proyecto. Las entrevistas personales serán guiadas por el equipo de ECPM Sur y se confirmarán vía correo electrónico.</p>
+          </li>
+          <li class="collection-item avatar">
+            <i class="circle red">4</i>
+            <h5>Formación</h5>
+            <p>El proceso de formación se inicia en el mes de mayo y finaliza en noviembre de 2017, el cual se divide en: Taller de Producción Musical, Taller de Composición Musical, Master Class, Laboratorio de Producción Musical y Formación Técnica Extendida, cada uno con horas estipuladas y disciplinas correspondientes, a las que deberán asistir todos los estudiantes. Durante esta etapa además se valorará la perseverancia, responsabilidad, compromiso y trabajo en equipo que demuestre cada estudiante con el proceso de formación.</p>
+          </li>
+          <li class="collection-item avatar">
+            <i class="circle red">4.1</i>
+            <h5>Grabación</h5>
+            <p>En este proceso los estudiantes tendrán acceso a todas las tecnologías e implementos presentes en el estudio de ECPM Sur, para que junto al equipo se realice la grabación y masterización profesional de un tema musical por proyecto. Además los estudiantes deberán grabar un registro audiovisual por proyecto, donde se recopile el último proceso de ECPM Sur.</p>
+          </li>
+          <li class="collection-item avatar">
+            <i class="circle red">5</i>
+            <h5>Certificación</h5>
+            <p>Luego de finalizar el proceso formativo, los y las estudiantes recibirán un certificado que acredite el número de horas realizadas, las áreas de especialización y el número de presentaciones realizadas en el transcurso del año destacando sus competencias en alguna áreas específicas.</p>
+          </li>
+          <li class="collection-item avatar">
+            <i class="circle red">6</i>
+            <h5>Quienes no pueden participar</h5>
+            <p>Aquellas bandas que ya tienen un sello discográfico</p>
+          </li>
+          <li  class="collection-item avatar" >
+            
+        <div class="  center row">
+          <div class="input-field col s12 ">
+              <a>
+                <input id="chkbxAceptaTerminos2" type="checkbox" class="big filled-in"/>
+                <label for="chkbxAceptaTerminos2"> 
+                 <strong> <h5> He leido las bases y acepto los términos de postulación. </h5>  </strong> 
+                 <span style="color:red" id="msgTerminos2"></span> </label>
+              </a>
+          </div>
+        </div>
+        <br>
+          </li>
+        </ul>
+
+     
+
+      </div>
+    </div>
+  </div>
+  <div class="parallax"><img src="images/bases.jpg" alt="Unsplashed background img 2"></div>
+</div>
+
+<script>
+  $(document).ready(function(){
+	 $('#chkbxAceptaTerminos2').prop('checked', false);
+  
+    $('.parallax').parallax();
+
+    $('#chkbxAceptaTerminos2').click(function(event){       
+      $('#contenido').load('postulacionform.html', function() {
+        $(this).show("slow",function(){
+          window.scrollTo(0, 0);
+        });
+      });
+    });
+  });
+</script>
+
+<style type="text/css">
+  .parallax-container1 {
+    position: relative;
+    overflow: hidden;
+  }
+</style>
