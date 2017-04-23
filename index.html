@@ -179,21 +179,32 @@
  
                     </form>
                 </div>
-            </div>
-            <div class="modal-footer">
+                    <div class="row ">
+                       <div class="input-field col s12 ">
+                         <label for="contact-send">  <span style="color:red" id="msgContactValidation"></span>  </label>
+                          </div>
+                  </div>
+                    <div class="row right">
             <button form="contact-form" id="contact-send" class="btn waves-effect waves-light blue" type="submit">Enviar
                 <i class="material-icons right">email</i>
                 </button>
                 <a class="modal-action modal-close waves-effect waves-red btn-flat black-text" href="#!">
                     Cancelar
                 </a>
-               
+                </div>
             </div>
+           
         </div>
-        <main id="contenido">
+      
+<!-- Modal Structure -->
+        <div style="text-align: center ;box-shadow:0; overflow: hidden; background-color:rgba(0,0,0,0); max-height: 100%;" class="modal" id="modal5">
+        <img   class="responsive-img" src="images/convocatoria.png" alt="">
+            
                  
+              </div>
+        </div>
 
-
+        <main id="contenido">
         </main>
 
         <footer class="page-footer teal">
@@ -206,7 +217,7 @@
              
 <div class="col s3">
                 <div class="container left-align">
-                  <img class="responsive-img" src="images/logo-baj.png" alt="">
+                  <img class=" responsive-img" src="images/logo-baj.png" alt="">
                 </div>
                    </div>
                 <div class="container right-align">
@@ -235,9 +246,27 @@
  
         <script>
             $(document).ready(function(){
+            $('.modal').modal();
+            $('#modal5').modal('open');
+             $('#modal5').click(function(){
 
-    var request;
-     $( 'form' ).submit(function( event ) {
+                 $('#modal5').modal('close');
+             });
+
+
+            var msgVal='';
+            $('#contact-send').click(function(){
+              msgVal='';
+                   ($('#contact-description').val()=='') ? msgVal+=' Descripción,':'';   //
+                    ($('#contact-email').val()=='') ? msgVal+=' Correo,':'';
+                    ($('#contact-name').val()=='') ? msgVal+=' Nombre,':'';
+                    console.log( "Falta "+ msgVal+" por ingresar!" );
+                   (msgVal!='')?$( "#msgContactValidation" ).text( "Falta "+ msgVal+" por ingresar!" ).show().fadeOut( 10000 ):'';
+                      
+            });
+            var request;
+             if (msgVal==''){
+            $( 'form' ).submit(function( event ) {
             event.preventDefault();
             if (request) {
                 request.abort();
@@ -252,12 +281,12 @@
                       url: "endpoints/contact.php",
                       type: "post",
                       data: serializedData,
-                      
                     });
                     request.done(function( msg ) {
-
                      alert( msg );
-                     location.reload();
+                       $('#modal2').modal('close');
+                         $('#contenido').load("home.html");
+                   window.scrollTo(0, 0);    //  location.reload();
                     });      
                     request.fail(function( jqXHR, textStatus, errorThrown ) {
                       alert( "Request failed: " + textStatus + errorThrown );
@@ -265,16 +294,12 @@
                      request.always(function () {
                         $inputs.prop("disabled", false);
                     });
- 
-
-    });
-
-
-
-
-
-
-
+                });
+             }else{
+                     event.preventDefault();
+                     
+                    $( "#msgContactValidation" ).text( "Falta "+ msgVal+" por ingresar!" ).show().fadeOut( 10000 );
+                  }
 
 
             $("#politica-modal   p,#politica-modal   h5,#politica-modal   h4").css("font-size","80%");
@@ -284,7 +309,6 @@
 
             $(".button-collapse").sideNav();
             $('.parallax').parallax();
-            $('.modal').modal();
             $('.tooltipped').tooltip({delay: 50});
 
             $('#contenido').load("home.html");

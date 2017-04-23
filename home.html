@@ -7,8 +7,8 @@
       </div>
       <div id="cardpostular" class="col l4">
            
-           <div class="card-panel push-right right center" style="margin:8%;" >
-              <p> Postula a la primera Escuela Colaborativa de Producción Musical Sur.</p>   
+           <div class="card-panel push-right right center" style="margin:8%" >
+              <p style="text-align: left" > Postula a la primera Escuela Colaborativa de Producción Musical Sur.</p>   
                 <button id="postular" class="btn waves-effect waves-light red" type="submit">Postula aqui
                 <i class="material-icons right">new_releases</i>
                 </button>
@@ -92,16 +92,21 @@
   }
 }
 </style>
-
+ 
 <script>
     $(document).ready(function(){
+     
+        
+
+
+         window.scrollTo(0, 0);
         $('.parallax').parallax();
       //  $('#instagram').load("gallery.html");
  
          $('#postular').click(function(event){
           
                 //$('.button-collapse').sideNav('hide');
-             $('#contenido').load("bases.html");
+          $('#contenido').load("bases.html");
              window.scrollTo(0, 0);
         });
 

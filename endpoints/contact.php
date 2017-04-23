@@ -20,21 +20,22 @@ if( !mail($destino,$asunto,$cuerpo.'...  ATTE:'.$nombre,$headers) ){
 		echo "No se pudo enviar intente contactarse al correo ".$destino.' .';
 }else{
 	echo "Su consulta fue ingresada, recibirá una respuesta al correo prontamente. Gracias.";
-		
+	include('conn.php');
+
+	$stmt = $mysqli->prepare("INSERT into contact(name, mail, header, description) VALUES (?, ?, ?,?)");
+			
+	$stmt->bind_param("ssss", $nombre,$correo,$asunto,$cuerpo);
+	$stmt->execute();
+	/*if (! ($stmt->error == '') ) {
+	 	echo "Error: ". $stmt->error;
+	}else{
+	 */
+	$stmt->close();
+	$mysqli->close();
+			
 }
 
-include('conn.php');
 
-$stmt = $mysqli->prepare("INSERT into contact(name, mail, header, description) VALUES (?, ?, ?,?)");
-		
-$stmt->bind_param("ssss", $nombre,$correo,$asunto,$cuerpo);
-$stmt->execute();
-/*if (! ($stmt->error == '') ) {
- 	echo "Error: ". $stmt->error;
-}else{
- */
-$stmt->close();
-$mysqli->close();
  
     
 ?>

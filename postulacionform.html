@@ -1,4 +1,4 @@
-<div class="parallax-container2 valign-wrapper" style="padding-top: 30px;">
+ <div class="parallax-container2 valign-wrapper" style="padding-top: 30px;">
   <div class="section no-pad-bot">
     <div class="container">
       <div class="row">
@@ -250,16 +250,22 @@ $( 'form' ).submit(function( event ) {
             });
             request.done(function( msg ) {
              alert( msg );
-          //   location.reload();
+                $('#contenido').load("home.html");
+                   window.scrollTo(0, 0);    //  location.reload();
+           //  location.reload();
             });      
             request.fail(function( jqXHR, textStatus, errorThrown ) {
               alert( "Request failed: " + textStatus + errorThrown );
+                $('#contenido').load("home.html");
+                   window.scrollTo(0, 0);    //  location.reload();
             });
              request.always(function () {
                 $inputs.prop("disabled", false);
             });
 
       }else{
+         event.preventDefault();
+         
         $( "#msgValidation" ).text( "Falta "+ msgVal+" por ingresar!" ).show().fadeOut( 10000 );
       }
 
