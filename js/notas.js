@@ -32,7 +32,7 @@
  request.always(function() {});
  
 function sop(idnota){
-   //   console.log(notas);
+      console.log(notas);
         $( "#contenido" ).load( "notadeprensa.html", function() {
              for (var key in notas) {
                     if (notas[key].id==idnota) {
@@ -40,7 +40,9 @@ function sop(idnota){
                             $('#subheader ').html(notas[key].subheader);
                             $('#body ').html(notas[key].body);
         notas[key].url==undefined? $("#link ").css( "display", "none" ) :$("#link ").attr("href", notas[key].url);
-                            $("#pic").attr("src",notas[key].pic);
+                           //   $("#pic").attr("src",notas[key].pic);
+                              $('#fecha').html(notas[key].created2);
+                              $("#author").html(notas[key].author);
  
                     }
                 }

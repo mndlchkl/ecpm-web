@@ -8,7 +8,7 @@ $dbname = "ecpm";
  
  include('conn.php');
 
-$q = "select * from notes where up=1 order by created desc"; 
+$q = "select *,DATE_FORMAT(created,'%d/%m/%Y') AS created2 from notes where up=1 order by created desc"; 
        //ESTE ARRAY ALMACENARA LOS REGISTROS
 
 $datos = array();
