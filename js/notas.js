@@ -27,7 +27,7 @@
      }
  });
  request.fail(function(jqXHR, textStatus, errorThrown) {
-     alert("Request failed: " + textStatus + errorThrown);
+     console.log("Request failed: " + textStatus + errorThrown);
  });
  request.always(function() {});
  
