@@ -27,13 +27,35 @@ if (request) {
                 count: num_photos
             },
             success: function(data2) {
-             //   console.log(data2);
+            console.log(data2);
                 $("#load").remove();
                 for (x in data2.data) {
                     if (data2.data[x].type == "image") {
-                        $('#insta-grid').append('<li><img src="' + data2.data[x].images.standard_resolution.url + '"><a target="_blank" href="' + data2.data[x].link + '" class="instalink"><div class="caption right-align"><h3>' + data2.data[x].caption.text + '</h3><h4 class="light grey-text text-lighten-3"><i class="fa fa-heart"></i>&nbsp;' + data2.data[x].likes.count + '&emsp;<i class="fa fa-comment"></i>&nbsp;' + data2.data[x].comments.count + '</h4></div></a></li>');
+
+                            $('#insta-grid').append('<li>'+
+                '<div  class="card insta-polaroid">'+
+                   ' <img src= " '+  data2.data[x].images.standard_resolution.url+' " alt="">'+
+                '</div>  <a target="_blank" href="' + data2.data[x].link + 
+                            '" class="instalink"><div  class="instalink card insta-comments">'+
+                '<h5 class="light grey-text text-lighten-3"><i class="fa fa-heart"></i>&nbsp;'+
+                           data2.data[x].likes.count+'&emsp;<i class="fa fa-comment"></i>&nbsp; '+data2.data[x].comments.count+' </h5>'+
+                    '<p class="light grey-text text-lighten-3" > '+data2.data[x].caption.text+'</p>'+
+                '</div></a>'+
+           ' </li>');
+
+                               
+
                     } else {
-                        $('#insta-grid').append('<li><img src="' + data2.data[x].images.standard_resolution.url + '"><a target="_blank" href="' + data2.data[x].link + '" class="instalink"><div class="caption right-align"><h3>' + data2.data[x].caption.text + '</h3><h4 class="light grey-text text-lighten-3"><i class="fa fa-play"></i>&nbsp;<i class="fa fa-heart"></i>&nbsp;' + data2.data[x].likes.count + '&emsp;<i class="fa fa-comment"></i>&nbsp;' + data2.data[x].comments.count + '</h4></div></a></li>');
+                            $('#insta-grid').append('<li>'+
+                '<div  class="card insta-polaroid">'+
+                   ' <img src= " '+  data2.data[x].images.standard_resolution.url+' " alt="">'+
+                '</div>  <a target="_blank" href="' + data2.data[x].link + 
+                            '" class="instalink"><div  class="instalinkcard insta-comments">'+
+                '<h5 class="light grey-text text-lighten-3"><i class="fa fa-heart"></i>&nbsp;'+
+                           data2.data[x].likes.count+'&emsp;<i class="fa fa-comment"></i>&nbsp; '+data2.data[x].comments.count+' </h5>'+
+                    '<p class="light grey-text text-lighten-3" > '+data2.data[x].caption.text+'</p>'+
+                '</div></a>'+
+           ' </li>');
                     }
                 }
                 $('.slider').slider({
