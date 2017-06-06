@@ -3,14 +3,14 @@
  if (request) {
      request.abort();
  }
-    console.log("hme.js");
+   
  request = $.ajax({
      url: "endpoints/home.php",
      type: "get",
  });
  request.done(function(data) {
     home = JSON.parse(data);
-    console.log(home)
+    //console.log(home)
     $('#parrafo1').text(home.parrafo1);
     $("#url1").attr("src",home.url1);
      $('#parrafo2').text(home.parrafo2);
