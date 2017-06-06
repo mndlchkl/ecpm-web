@@ -3,6 +3,9 @@ p, h5,h2,a,li,h1,h3,h4,button
   font-family: 'Didact Gothic', sans-serif;
   text-align: justify;
 }
+p{
+  font-size: medium;
+}
 
 
 header, main, footer {
@@ -14,6 +17,7 @@ header, main, footer {
     padding-left: 0;
     /*font-size: 0px !important*/
   }
+
   .separador {
     display:none;
   }
