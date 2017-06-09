@@ -9,12 +9,13 @@
  });
  request.done(function(data) {
     notas=JSON.parse(data);
+    console.log(notas);
      for (var key in notas) {
        $('#listadoNotas').append(''+
         ' <div  id="verNota" class="col s12 m6 padcero">'+
            ' <div class="marco">'+
              '<div class="mascara">'+
-                '<img class="responsive-img" src="' +notas[key].pic +'">'+
+                '<img class="responsive-img" src="' +notas[key].url +'">'+
                   '<div   class="gallery-box-caption">'+
                    ' <div  style="cursor:pointer" class="gallery-box-content">'+
                       '<h4  onclick="sop('+notas[key].id+')" value="'+ notas[key].id +'" data-idnota="'+notas[key].id+'"  style="text-align: center"  >'+ notas[key].header +'</h4>'+
