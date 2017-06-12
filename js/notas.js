@@ -50,11 +50,5 @@ function sop(idnota){
 
             window.scrollTo(0, 0);
            
-        });
-
-
-       
-
-
-   
+        }); 
 }

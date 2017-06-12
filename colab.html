@@ -1,0 +1,37 @@
+<div style="margin:5%" id="colab" >
+    <h2 id="nombre"  ></h2>
+    <hr class="style9">
+    <div style="font-weight: normal; font-size:110%" id="bio">
+    </div>  
+    <div class="row"><img  id="foto" class="responsive-img" src="" alt=""></div>
+    <hr class="style9">
+    <div class="row">
+    	<button  id="goback"  class="btn waves-effect waves-light blue right" type="submit">Volver
+              <i class="material-icons right"> </i>
+    </button>
+    </div>
+</div>
+
+<style>
+#body a{
+  color:blue;
+}
+
+hr.style9 {
+  border-top: 1px dashed #8c8b8b;
+  border-bottom: 1px dashed #fff;
+}
+
+</style>
+
+<script>
+	 $(document).ready(function(){
+      $('#goback').click(function(){                            
+                $('#contenido').load("about.html");
+                  window.scrollTo(0, 0);
+           
+      });
+
+  });
+
+</script>

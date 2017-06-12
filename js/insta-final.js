@@ -2,7 +2,8 @@ var token = '4903487647.4eec902.f2d19fbaa8084c50883f4480a8b70dae',
     username = 'ecpm_sur',
     num_photos = 9;
 $('#insta-grid').html('<div id="load" class="center-align" style="padding-top: 100px"><img src="images/gears.svg"></div>');
-/* Guarda la petición en una variable y previene su ejecución si ya esta siendo ejecutada*/
+
+/* request : Guarda la petición en una variable y previene su ejecución si ya esta siendo ejecutada*/
 var request;
 if (request) {
     request.abort();
