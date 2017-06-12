@@ -5,7 +5,7 @@ var colabs={};
  }
  request = $.ajax({
     dataType: 'jsonp',
-	url: 'http://localhost/APIsgcc/public/api/colabs',
+	url: 'http://sgcc.cl/sgccApi/public/api/colabs',
 	type: 'GET',
 	crossDomain:true,
  });
@@ -15,7 +15,7 @@ var colabs={};
           colabs=data;
             $('#colabs .row').append('  <div onclick="verperfil('+data[key].Id+')" value="'+ data[key].Id+'" class="colab-card  col m3 s6">'+
                 ' <div class="center col m12 s12">'+
-                 '<img  class="  circle responsive-img" src="http://localhost/TESIS/SGCCbasic/web/'+data[key].RutaImg+'" alt="">'+
+                 '<img  class="  circle responsive-img" src="http://sgcc.cl/baj/web/'+data[key].RutaImg+'" alt="">'+
                  ' </div>  '+
                  ' <div   class="colab-detail col m12 s12">'+
                  '<h5>'+data[key].Nombre1+' '+data[key].Apellido1+'</h5><hr class="center detail-sep" >'+

@@ -8,7 +8,7 @@ moment.locale('es') ;
  }
  request = $.ajax({
     dataType: 'jsonp',
-	url: 'http://localhost/APIsgcc/public/api/actividades',
+	url: 'http://sgcc.cl/sgccApi/public/api/actividades',
 	type: 'GET',
 	crossDomain:true,
  });
