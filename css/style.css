@@ -8,6 +8,13 @@ p{
 }
 
 
+  @media only screen and (max-width: 600px) {
+   h1,h2 {
+        font-size: xx-large;
+    }
+}
+
+
 header, main, footer {
   padding-left: 300px;
   /*font-size: 0px !important*/

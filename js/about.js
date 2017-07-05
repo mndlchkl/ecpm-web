@@ -42,7 +42,7 @@ function verperfil(id){
                             $('#nombre ').html(colabs[key].Nombre1+' '+colabs[key].Apellido1);
                
                             $('#bio ').html(colabs[key].Bio);
-                               $("#foto").attr("src",'http://localhost/TESIS/SGCCbasic/web/'+colabs[key].RutaImg);
+                               $("#foto").attr("src",'http://sgcc.cl/baj/web/'+colabs[key].RutaImg);
                         
  
                     }
